@@ -1,5 +1,5 @@
 # Malmo-3x3Runner
-A 3x3 grid view solution to cliff walking. 
+A 3x3 grid view solution to cliff walking. Uses discrete movement commands.
 
 The runner agent takes in the walkable block types and the goal block type and then searches for the goal. 
 
