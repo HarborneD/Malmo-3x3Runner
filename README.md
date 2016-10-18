@@ -21,7 +21,7 @@ Be sure to add the following to your mission XML:
 Example usage within tutorial 7:
 
 ```
- #make decision making agent
+    #make decision making agent
     runner_agent = GridViewRunnerAgent(["diamond_block","emerald_block","redstone_block"],"redstone_block")
 
     # Loop until mission ends:
