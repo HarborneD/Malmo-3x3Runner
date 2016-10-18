@@ -5,7 +5,7 @@ The runner agent takes in the walkable block types and the goal block type and t
 
 This is highly based on depth first search with back tracing and queue list. 
 
-Be sure to add: 
+Be sure to add the following to your mission XML: 
 
 ```
          <DiscreteMovementCommands/>
@@ -17,6 +17,26 @@ Be sure to add:
                       </Grid>
                   </ObservationFromGrid>
 ```
+
+Example usage within tutorial 7:
+
+```
+ #make decision making agent
+    runner_agent = GridViewRunnerAgent(["diamond_block","emerald_block","redstone_block"],"redstone_block")
+
+    # Loop until mission ends:
+    while world_state.is_mission_running:
+        sys.stdout.write(".")
+        time.sleep(0.2)
+        world_state = agent_host.getWorldState()
+
+        runner_agent.TakeNextAction(world_state,agent_host)
+
+        for error in world_state.errors:
+            print "Error:",error.text
+
+```
+
 
 Project Malmo:
 https://github.com/Microsoft/malmo#getting-started
